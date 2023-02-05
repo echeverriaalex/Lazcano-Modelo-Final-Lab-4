@@ -11,6 +11,7 @@
                          <th>Fecha</th>
                          <th>Nombre</th>
                          <th>Email</th>
+                         <th>Descripcion</th>
                          <th>Acción</th>
                     </thead>
                     <tbody>
@@ -27,15 +28,18 @@
                                    }
                               }
                               ?>
-                              <td><?= $ticket->getDate() ?></td>
-                              <td><?= $ticket->getName() ?></td>
-                              <td><?= $ticket->getEmail() ?></td>
+                              <td><?= $ticket->getDate(); ?></td>
+                              <td><?= $ticket->getName(); ?></td>
+                              <td><?= $ticket->getEmail(); ?></td>
+                              <td><?= $ticket->getDescription(); ?></td>
 
                               <td>
                                    <form method="POST" action="<?php echo FRONT_ROOT?>Tickets/Delete" >
                                         <input type="hidden" name="ticketId" value="<?php echo $ticket->getTicketid(); ?>">
                                         
-                                        <!-- 
+                                        
+                                             <!-- ESTO LO HIZO EL PROFESOR Y NUNCA LO PUDE HACER FUNCIONAR POR ESO USE EL BUTTON -->
+                                        <!--     
                                              <a href="<?=FRONT_ROOT?>Tickets/delete" class="btn btn-danger" role="button" aria-pressed="true">Eliminar</a>
                                         -->
                                         <button type="submit" class="btn btn-danger"> Eliminar </button>
